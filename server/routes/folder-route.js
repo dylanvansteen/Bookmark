@@ -24,6 +24,24 @@ router.post('/', function (req, res) {
     });
 });
 
+router.patch('/:id', function (req, res) {
+    const id = req.params['id'];
+    const body = _.pick(req.body, ['name']);
+
+    if (!ObjectID.isValid(id))
+        return res.status(404).send();
+
+    FolderModel.findByIdAndUpdate(id, body).then(folder => {
+        if (!folder)
+            return res.status(404).send();
+
+        res.send(folder);
+    }).catch(err => {
+        return res.status(400).send();
+    });
+});
+
+
 router.get('/:id', function (req, res) {
     const id = req.params['id'];
 
