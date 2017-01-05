@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 var FolderModel = mongoose.model('folder', {
     name: {
         type: String,
-        require: true,
+        required: true,
         minlength: 2
     }
 });
