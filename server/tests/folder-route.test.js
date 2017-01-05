@@ -67,6 +67,40 @@ describe(route, () => {
         });
     });
 
+    describe('/ PATCH', () => {
+        it('should create an ppdate item', (done) => {
+            const name = 'Vacations';
+            request(app)
+                .patch(`${route}/${folders[0]._id}`)
+                .send({
+                    name
+                })
+                .expect(200)
+                .expect((res) => {
+                    expect(res.body.name).toBe(name);
+                })
+                .end((err) => {
+                    if (err)
+                        return done(err);
+
+                    FolderModel.find({ name: name }).then(folder => {
+                        expect(folder).toExist();
+                        done();
+                    });
+                });
+        });
+
+        it('should give an 400', (done) => {
+            request(app)
+                .patch(`${route}/${folders[0]._id}`)
+                .send({
+                    name: 'a'
+                })
+                .expect(400)
+                .end(done);
+        });
+    });
+
     describe('/:id GET', () => {
         it('should give an existing item back based on id', (done) => {
             let id = folders[0]._id;

@@ -31,10 +31,9 @@ router.patch('/:id', function (req, res) {
     if (!ObjectID.isValid(id))
         return res.status(404).send();
 
-    FolderModel.findByIdAndUpdate(id, body).then(folder => {
+    FolderModel.findByIdAndUpdate(id, body, { new: true }).then(folder => {
         if (!folder)
             return res.status(404).send();
-
         res.send(folder);
     }).catch(err => {
         return res.status(400).send();
