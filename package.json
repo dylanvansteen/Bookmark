@@ -30,7 +30,7 @@
     "rxjs": "5.0.0-beta.12",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.6.23",
-    "angular-cli": "1.0.0-beta.15",
+    "angular-cli": "1.0.0-beta.15"
   },
   "devDependencies": {
     "expect": "^1.20.2",
