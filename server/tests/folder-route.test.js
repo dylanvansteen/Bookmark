@@ -5,7 +5,7 @@ const {ObjectID} = require('mongodb');
 const {app} = require('./../server');
 const {FolderModel} = require('./../models/folder-model');
 
-const route = '/folder';
+const route = '/api/folder';
 const folders = [
     { _id: new ObjectID(), name: 'Home' },
     { _id: new ObjectID(), name: 'Work' },

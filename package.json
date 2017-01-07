@@ -4,8 +4,8 @@
   "description": "bookmark api",
   "main": "server/server.js",
   "scripts": {
-    "start": "node server/server",
-    "dev": "nodemon server/server",
+    "start": "ng build prod && node server/server",
+    "dev": "nodemon --exec \"ng build && node server/server.js\" --watch server --watch src  ",
     "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha server/**/*.test.js",
     "test-watch": "nodemon --exec \"npm test\""
   },
@@ -16,11 +16,38 @@
     "express": "^4.14.0",
     "lodash": "^4.17.3",
     "mongodb": "^2.2.16",
-    "mongoose": "^4.7.4"
+    "mongoose": "^4.7.4",
+    "morgan": "^1.7.0",
+    "@angular/common": "2.0.0",
+    "@angular/compiler": "2.0.0",
+    "@angular/core": "2.0.0",
+    "@angular/forms": "2.0.0",
+    "@angular/http": "2.0.0",
+    "@angular/platform-browser": "2.0.0",
+    "@angular/platform-browser-dynamic": "2.0.0",
+    "@angular/router": "3.0.0",
+    "core-js": "^2.4.1",
+    "rxjs": "5.0.0-beta.12",
+    "ts-helpers": "^1.1.1",
+    "zone.js": "^0.6.23"
   },
   "devDependencies": {
     "expect": "^1.20.2",
     "mocha": "^3.2.0",
-    "supertest": "^2.0.1"
+    "supertest": "^2.0.1",
+    "@types/jasmine": "^2.2.30",
+    "angular-cli": "1.0.0-beta.15",
+    "codelyzer": "~0.0.26",
+    "jasmine-core": "2.4.1",
+    "jasmine-spec-reporter": "2.5.0",
+    "karma": "1.2.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-remap-istanbul": "^0.2.1",
+    "protractor": "4.0.5",
+    "ts-node": "1.2.1",
+    "tslint": "3.13.0",
+    "typescript": "2.0.2"
   }
 }
