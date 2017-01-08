@@ -8,7 +8,7 @@ export class FolderService implements IFolderService {
     constructor(private http: Http) {
     }
 
-    get(): Observable<Folder> {
+    get(): Observable<Folder[]> {
         return Observable.throw(new Error());
     }
 }

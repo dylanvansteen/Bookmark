@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs/Rx';
 
 export interface IFolderService {
-    get() : Observable<Folder>;
+    get(): Observable<Folder[]>;
 }
 
 export class Folder {
