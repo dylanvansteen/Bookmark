@@ -15,4 +15,4 @@ let appRoutes: Routes = [
     declarations: [HomeComponent],
     providers: [],
 })
-export class HomeModule { }
+export default class HomeModule { }
