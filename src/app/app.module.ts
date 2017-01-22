@@ -5,10 +5,11 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { AppComponent } from './app.component';
 import { ContentComponent } from './content.component';
 import { HomeComponent } from './views/+home/home.component';
-import { SharedModule } from './shared';
-import { SideNavigationComponent } from './views/shared';
 import { LoginComponent } from './views/login/login.component';
 import { AuthGuard } from './guards/auth-gaurd';
+import { SideNavigationComponent } from './views/shared/side-navigation.component';
+import { SharedModule } from './shared/shared.module';
+import { RegisterComponent } from './views/register/register.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/app/home', pathMatch: 'full' },
@@ -19,6 +20,7 @@ const appRoutes: Routes = [
     ]
   },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: '**', component: LoginComponent },
 
 ];
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
     AppComponent,
     ContentComponent,
     SideNavigationComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     SharedModule,

@@ -2,6 +2,6 @@ const express = require('express');
 const router = express.Router();
 
 router.use('/folder', require('./folder-route'));
-router.use('/token', require('./token-route'));
+router.use('/authorization', require('./authorization-route'));
 
 module.exports = router;

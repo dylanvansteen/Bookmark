@@ -6,6 +6,7 @@
   "scripts": {
     "start": "ng build prod && node server/server",
     "dev": "nodemon -e js,html,ts,css --watch server --watch src --exec \"ng build && node server/server.js\"   ",
+    "dev-server": "nodemon server/server.js",
     "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha server/**/*.test.js",
     "test-watch": "nodemon --exec \"npm test\""
   },
@@ -28,9 +29,11 @@
     "lodash": "^4.17.3",
     "mongodb": "^2.2.16",
     "mongoose": "^4.7.4",
+    "mongoose-validators": "^0.1.0",
     "morgan": "^1.7.0",
     "rxjs": "5.0.0-beta.12",
     "ts-helpers": "^1.1.1",
+    "validator": "^6.2.1",
     "zone.js": "^0.6.23"
   },
   "devDependencies": {

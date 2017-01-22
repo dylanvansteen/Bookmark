@@ -20,7 +20,7 @@ router.post('/', function (req, res) {
 
         res.send(folder);
     }).catch(err => {
-        return res.status(400).send();
+        return res.status(400).send(err);
     });
 });
 

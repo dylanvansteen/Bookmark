@@ -1,6 +1,6 @@
 const express = require('express');
 const body_parser = require('body-parser');
-const logger = require('morgan');
+const morgan = require('morgan');
 const mongoose = require('mongoose');
 const path = require('path');
 
@@ -13,6 +13,7 @@ var app = express();
 app.use(body_parser.json());
 app.use(body_parser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '..', `dist`)));
+app.use(morgan('dev'));
 
 app.get('/asd', (req, res) => {
     res.send({
