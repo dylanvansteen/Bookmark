@@ -1,3 +1,5 @@
+import { PageModule } from './views/+page/page.module';
+import { HomeModule } from './views/+home/home.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
@@ -9,14 +11,14 @@ import { SideNavigationComponent } from './views/shared';
 import { LoginComponent } from './views/login/login.component';
 // import { AuthGuard } from './guards/auth-gaurd';
 
-const appRoutes: Routes = [
+let appRoutes: Routes = [
   { path: '', redirectTo: '/app/home', pathMatch: 'full' },
   {
-    path: 'app', component: ContentComponent, 
+    path: 'app', component: ContentComponent,
     // canActivate: [AuthGuard],
-     children: [
-      { path: 'home', loadChildren: "app/views/+home/home.module#HomeModule" },
-      { path: 'page', loadChildren: 'app/views/+page/page.module#PageModule' }
+    children: [
+      { path: 'home', loadChildren: typeof (HomeModule), },
+      { path: 'page', loadChildren: typeof (PageModule) }
     ]
   },
   { path: 'login', component: LoginComponent },
