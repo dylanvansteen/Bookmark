@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "bookmark api",
   "main": "server/server.js",
+  "angular-cli": {},
   "scripts": {
     "start": "ng build prod && node server/server",
     "dev": "nodemon -e js,html,ts,css --watch server --watch src --exec \"ng build && node server/server.js\"   ",

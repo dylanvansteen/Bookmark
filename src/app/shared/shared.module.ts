@@ -7,17 +7,9 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
     imports: [
-        BrowserModule,
-        FormsModule,
-        HttpModule,
-        RouterModule
     ],
     providers: [],
     exports: [
-        BrowserModule,
-        FormsModule,
-        HttpModule,
-        RouterModule
     ]
 })
 export class SharedModule { }

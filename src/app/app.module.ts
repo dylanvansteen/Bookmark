@@ -1,3 +1,7 @@
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
 import { PageModule } from './views/+page/page.module';
 import { HomeModule } from './views/+home/home.module';
 import { NgModule } from '@angular/core';
@@ -6,25 +10,9 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { ContentComponent } from './content.component';
-import { SharedModule } from './shared';
+import { SharedModule } from './shared/shared.module';
 import { SideNavigationComponent } from './views/shared';
 import { LoginComponent } from './views/login/login.component';
-// import { AuthGuard } from './guards/auth-gaurd';
-
-let appRoutes: Routes = [
-  { path: '', redirectTo: '/app/home', pathMatch: 'full' },
-  {
-    path: 'app', component: ContentComponent,
-    // canActivate: [AuthGuard],
-    children: [
-      { path: 'home', loadChildren: typeof (HomeModule), },
-      { path: 'page', loadChildren: typeof (PageModule) }
-    ]
-  },
-  { path: 'login', component: LoginComponent },
-  { path: '**', component: LoginComponent },
-
-];
 
 @NgModule({
   declarations: [
@@ -34,8 +22,11 @@ let appRoutes: Routes = [
     LoginComponent
   ],
   imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
     SharedModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
