@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 
-let appRoutes: Routes = [
+const appRoutes: Routes = [
     {
         path: '', component: HomeComponent
     }
@@ -14,5 +14,6 @@ let appRoutes: Routes = [
     ],
     declarations: [HomeComponent],
     providers: [],
+    entryComponents: [HomeComponent]
 })
 export class HomeModule { }

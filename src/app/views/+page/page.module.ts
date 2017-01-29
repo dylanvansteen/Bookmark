@@ -14,5 +14,7 @@ let appRoutes: Routes = [
     ],
     declarations: [PageComponent],
     providers: [],
+    entryComponents: [PageComponent]
+
 })
 export class PageModule { }
