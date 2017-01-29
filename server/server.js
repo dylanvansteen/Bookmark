@@ -1,13 +1,11 @@
 const express = require('express');
 
-const logger = require('morgan');
+const morgan = require('morgan');
 const path = require('path');
 
 const port = process.env.PORT || 3000;
 var app = express();
 
-app.use(body_parser.json());
-app.use(body_parser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '..', `dist`)));
 app.use(morgan('dev'));
 

@@ -1,5 +1,5 @@
 {
-    "name": "temp",
+    "name": "bookmark",
     "version": "0.0.0",
     "license": "MIT",
     "angular-cli": {},
@@ -27,7 +27,11 @@
         "core-js": "^2.4.1",
         "rxjs": "^5.0.1",
         "ts-helpers": "^1.1.1",
-        "zone.js": "^0.7.2"
+        "zone.js": "^0.7.2",
+        "express": "4.14.0",
+        "path": "0.12.7",
+        "@angular/compiler-cli": "^2.3.1",
+        "morgan": "1.7.0"
     },
     "devDependencies": {
         "@angular/compiler-cli": "^2.3.1",
