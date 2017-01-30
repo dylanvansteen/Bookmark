@@ -31,13 +31,12 @@
         "express": "4.14.0",
         "path": "0.12.7",
         "@angular/compiler-cli": "^2.3.1",
-        "morgan": "1.7.0"
+        "morgan": "1.7.0",
+        "typescript": "~2.0.3"
     },
     "devDependencies": {
-        "@angular/compiler-cli": "^2.3.1",
         "@types/jasmine": "2.5.38",
         "@types/node": "^6.0.42",
-        "angular-cli": "1.0.0-beta.26",
         "codelyzer": "~2.0.0-beta.1",
         "jasmine-core": "2.5.2",
         "jasmine-spec-reporter": "2.5.0",
@@ -48,7 +47,6 @@
         "karma-remap-istanbul": "^0.2.1",
         "protractor": "~4.0.13",
         "ts-node": "1.2.1",
-        "tslint": "^4.3.0",
-        "typescript": "~2.0.3"
+        "tslint": "^4.3.0"
     }
 }
